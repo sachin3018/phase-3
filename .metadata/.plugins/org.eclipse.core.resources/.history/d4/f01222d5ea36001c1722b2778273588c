@@ -1,0 +1,5 @@
+package com.sachin.ShoesShop.Model;
+
+public class User {
+
+}

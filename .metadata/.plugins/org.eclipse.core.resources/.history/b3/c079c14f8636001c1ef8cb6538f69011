@@ -1,0 +1,19 @@
+package com.sachin.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sachin.model.Admin;
+import com.sachin.repository.AdminRepository;
+
+@Service
+public class AdminService {
+
+	@Autowired
+	private AdminRepository adminRepository;
+	
+	public boolean verifyAdmin(String username,String password) {
+		Admin temp =  AdminadminRepository.findByAdminEmail(username);
+		return true;
+	}
+}

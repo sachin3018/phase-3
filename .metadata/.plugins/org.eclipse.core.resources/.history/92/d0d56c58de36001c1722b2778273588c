@@ -1,0 +1,5 @@
+package com.sachin.ShoesShop.repository;
+
+public interface ProductRepository {
+
+}

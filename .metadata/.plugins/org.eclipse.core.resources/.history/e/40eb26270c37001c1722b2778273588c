@@ -1,0 +1,16 @@
+package com.sachin.ShoesShop.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.sachin.ShoesShop.Model.Orders;
+import com.sachin.ShoesShop.Model.User;
+
+@Repository
+public interface OrdersRepository extends JpaRepository<Orders, Integer> {
+	@Query(value = "SELECT product.name,count(*) As stock_clear FROM Orders inner join product on product.id = orders.productId inner join users on users.id = orders.userId group by product.id;%", nativeQuery = true)
+	List<User> findpurchaseReport();
+}

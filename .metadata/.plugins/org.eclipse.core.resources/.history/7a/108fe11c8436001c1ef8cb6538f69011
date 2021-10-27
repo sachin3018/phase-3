@@ -1,0 +1,7 @@
+package com.sachin.dao;
+
+import com.sachin.repository.AdminRepository;
+
+public class AdminDAO implements AdminRepository{
+
+}

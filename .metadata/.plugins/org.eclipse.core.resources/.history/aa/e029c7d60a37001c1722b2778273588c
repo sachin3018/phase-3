@@ -1,0 +1,7 @@
+package com.sachin.ShoesShop.Model;
+
+public class PurchaseReport {
+	private int productId;
+	private int stock_cleared;
+
+}

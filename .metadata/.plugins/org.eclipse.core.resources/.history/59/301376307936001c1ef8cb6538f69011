@@ -1,0 +1,5 @@
+package com.sachin.repository;
+
+public interface AdminRepository {
+
+}

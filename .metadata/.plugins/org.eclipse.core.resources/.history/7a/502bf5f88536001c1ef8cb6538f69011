@@ -1,0 +1,11 @@
+package com.sachin.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sachin.model.Admin;
+
+public interface AdminRepository extends JpaRepository<Admin, Integer> {
+	List<Admin> findByAdminEmail(String email);
+}

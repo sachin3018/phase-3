@@ -1,0 +1,28 @@
+package com.sachin.ShoesShop.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sachin.ShoesShop.Model.Product;
+import com.sachin.ShoesShop.repository.ProductRepository;
+
+@Service
+public class ProductService {
+
+	@Autowired
+	ProductRepository productRepository;
+	
+	public List<Product> getAllProduct(){
+		return productRepository.findAll();
+	}
+	
+	public boolean addProduct(Product product) {
+		Product savedProduct = productRepository.save(product);
+		if(savedProduct.getName().isEmpty()) {
+			return false;
+		}
+		return true;
+	}
+}

@@ -1,0 +1,19 @@
+package com.sachin.ShoesShop;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AdminService {
+
+	@Autowired
+	private AdminRepository adminRepository;
+	
+	public boolean verifyAdmin(String username,String password) {
+		Admin admin =  adminRepository.findByAdminEmail(username);
+		if(admin.getPassword().equals(password)) {
+			return true;
+		}
+		return false;
+	}
+}
